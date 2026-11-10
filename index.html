@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Cotizador inteligente de Marchos, agencia de marketing digital en Santa Cruz, Bolivia.">
+<title>Cotizador MARCHOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#071038;--bg2:#1a2570;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.15);--gold:#ECB31D;--gold2:#c9a02e;--slate:#9fb0cb;--tx:#fff;--mut:#a9b3d1;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--tx);background:linear-gradient(160deg,var(--bg) 0%,#0c1850 55%,var(--bg2) 100%) fixed;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding:28px 18px 60px}
+.logo{font:400 44px/1 'Bebas Neue',Impact,sans-serif;letter-spacing:1px;display:inline-flex;align-items:center;gap:1px}
+.logo b{color:var(--gold);font-weight:400}.logo i{color:var(--slate);font-style:normal}
+.logo u{text-decoration:none;display:inline-block;margin-left:5px;border:4px solid var(--gold);border-right:0;width:30px;height:30px;position:relative}
+.logo u s{text-decoration:none;position:absolute;right:-2px;bottom:-4px;font-size:17px;color:#fff;background:var(--bg);padding:0 2px;line-height:1}
+.sm{font-size:30px}.sm u{width:20px;height:20px;border-width:3px}.sm u s{font-size:11px}
+.eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin:0 0 10px}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+h1,h2{font-weight:500;letter-spacing:.04em;line-height:1.2;margin:0 0 10px}h1{font-size:34px}h2{font-size:26px}
+.tag{font-family:'Noto Serif',serif;font-style:italic;font-size:21px;color:#d5dbef}.tag b{font-weight:600;font-style:normal}.tag em{color:var(--gold2);font-weight:600}
+p.sub,.mut{color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin:18px 0;backdrop-filter:blur(6px);animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.bar{height:4px;background:var(--line);border-radius:4px;margin:22px 0 26px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.dots{display:flex;gap:8px;margin:0 0 18px}
+.dots span{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.dots span.on{background:var(--gold)}
+.fld{margin:0 0 20px}.fld>label{display:block;font-size:13px;font-weight:500;margin-bottom:8px}
+input[type=text],input[type=tel],input[type=email],input[type=number],input[type=password],textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:14px;padding:13px 14px;color:#fff;font:inherit;font-size:15px}
+input:focus,textarea:focus{outline:2px solid var(--gold2);border-color:transparent}textarea{min-height:76px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:13px;color:var(--tx);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:10px 15px;cursor:pointer}
+.chip:hover{border-color:var(--gold2)}
+.chip.on{background:var(--gold);color:#0a1240;border-color:var(--gold);font-weight:600}
+.chk{display:flex;gap:10px;font-size:13px;color:var(--mut);align-items:flex-start}.chk input{margin-top:3px;accent-color:var(--gold)}
+.err{color:#ff9d9d;font-size:12px;margin-top:6px}
+.nav{display:flex;gap:10px;justify-content:space-between;margin-top:26px;flex-wrap:wrap}
+.btn{font:inherit;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:14px 24px;border:1px solid var(--gold);background:var(--gold);color:#0a1240;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover{filter:brightness(1.07)}
+.btn.o{background:transparent;color:var(--gold)}
+.btn.sm{padding:9px 16px;font-size:11px}
+.btn.dark{background:transparent;border-color:var(--line);color:var(--tx)}
+.price{font-size:46px;font-weight:500;color:var(--gold2);line-height:1}.price small{font-size:20px;color:var(--gold);margin-right:8px}
+.lbl{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--slate);margin:18px 0 8px}
+ul.st{list-style:none;padding:0;margin:0}ul.st li{padding:4px 0 4px 22px;position:relative;font-size:14px}ul.st li:before{content:"✦";color:var(--gold);position:absolute;left:0;font-size:11px;top:8px}
+.pill{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;margin-bottom:8px}.pill span:last-child{color:var(--gold)}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:8px 0;border-bottom:1px solid var(--line)}.row b{color:var(--gold);font-weight:500;white-space:nowrap}
+.note{border-top:1px solid var(--gold2);padding-top:12px;margin-top:18px;font-size:12px;color:var(--mut)}
+.tabs{display:flex;gap:8px;margin:18px 0}
+.lead{border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 12px}
+.lead h3{margin:0 0 4px;font-size:16px;font-weight:500}
+.lead .meta{font-size:12px;color:var(--mut)}
+.badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;border-radius:999px;padding:4px 12px;border:1px solid}
+.b-alta{color:#7ee0bd;border-color:rgba(93,202,165,.5);background:rgba(93,202,165,.12)}
+.b-media{color:#f2c879;border-color:rgba(239,159,39,.5);background:rgba(239,159,39,.12)}
+.b-baja{color:#b9bfd4;border-color:var(--line);background:rgba(255,255,255,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.flash{background:rgba(93,202,165,.12);border:1px solid rgba(93,202,165,.5);color:#7ee0bd;border-radius:12px;padding:10px 14px;font-size:13px;margin:14px 0}
+details summary{cursor:pointer;color:var(--gold);font-size:12px;padding:6px 0}
+select{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:#fff;font:inherit;font-size:13px}
+@media(max-width:560px){h1{font-size:28px}.price{font-size:38px}.logo{font-size:36px}.grid2{grid-template-columns:1fr}}
+@media print{body{background:#fff;color:#000}.card{border-color:#999;background:#fff}.nav,.bar,.dots,.noprint{display:none!important}.price,.row b,.eyebrow{color:#7a5a00}.mut,.note,p.sub{color:#333}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<noscript><p style="max-width:640px;margin:40px auto;font-family:sans-serif">Activá JavaScript para usar el cotizador de Marchos.</p></noscript>
+<script>
+//ENGINE-START
+const CONFIG={
+ WHATSAPP:"59164542019",
+ TEL:"64542019",MAIL:"marchosagencia@gmail.com",SOCIAL:"@marchos.marketing",
+ AUTH_KEY:"McH-7v3!2026",
+ PLANS:[
+  {id:"start",n:"Plan Start",tag:"01 · Inicio",p:1800,d:"Perfecto para marcas que dan sus primeros pasos digitales",
+   inc:["Guión creativo","1 día de grabación","Edición optimizada para redes","Asesoría básica de contenido"],
+   net:{Facebook:"1 publicación",Instagram:"2 posts · 1 Reel",TikTok:"3 vídeos"}},
+  {id:"crecimiento",n:"Plan Crecimiento",tag:"02 · Crecimiento",p:2800,d:"Perfecto para marcas listas para escalar su presencia digital",
+   inc:["Guión estratégico","2 días de grabación","Edición","Calendario de contenido mensual","Optimización para redes","1 reunión estratégica mensual"],
+   net:{Facebook:"2 publicaciones",Instagram:"3 posts · 2 Reels",TikTok:"6 vídeos"}},
+  {id:"dominio",n:"Plan Dominio",tag:"03 · Premium",p:3800,d:"La solución completa para marcas que quieren liderar su industria",
+   inc:["Estrategia completa de contenido","Guión","2 - 3 días de grabación","Edición","Asesoría en crecimiento de cuenta","Configuración básica de Ads"],
+   net:{Facebook:"3 publicaciones",Instagram:"5 posts · 4 Reels",TikTok:"12 vídeos"}}],
+ ADDONS:{
+  video:{n:"Video adicional",d:"1 video con guión, grabación y edición",p:250,m:0},
+  coment:{n:"Gestión de comentarios",d:"Respuesta a comentarios y consultas básicas",p:300,m:1},
+  ads:{n:"Gestión de publicidad",d:"Configuración, monitoreo y optimización de Ads",p:350,m:1},
+  camp:{n:"Campaña publicitaria",d:"Configuración de una campaña puntual",p:200,m:0},
+  diseno:{n:"Diseño adicional",d:"Post o pieza gráfica adicional",p:80,m:0},
+  edvideo:{n:"Edición de video",d:"Edición de material entregado por el cliente",p:150,m:0},
+  fotos:{n:"Sesión de fotos",d:"Sesión adicional de producto o marca",p:300,m:0},
+  pub:{n:"Publicación adicional",d:"Publicación extra fuera del plan contratado",p:50,m:0}},
+ BUDGET:[{v:"r0",l:"Menos de Bs 1.800",max:1799},{v:"r1",l:"Bs 1.800 – 2.799",max:2799},{v:"r2",l:"Bs 2.800 – 3.799",max:3799},{v:"r3",l:"Bs 3.800 o más",max:1e9},{v:"unk",l:"Todavía no lo tengo definido"}],
+ PLAZO:{"Esta semana":15,"Este mes":10,"En 2 o 3 meses":5,"Solo estoy explorando":0},
+ LISTO:{"Sí, si la propuesta es adecuada":15,"Depende de la propuesta":8,"Aún no, estoy comparando":0},
+ PRIO:{alta:75,media:45},
+ UP:{red3:2,red2:1,estrategia:1,ads:2,freq:1,obj3:1,prior:1},
+ CUT:{dominio:4,crecimiento:2}};
+const SERV=[["contenido","Publicaciones, reels y videos"],["estrategia","Estrategia y calendario de contenido"],["grab","Grabación y edición de video"],["coment","Gestión de comentarios"],["ads","Publicidad pagada (Ads)"],["fotos","Sesión de fotos"],["diseno","Diseños o piezas gráficas extra"],["edvideo","Edición de videos que yo grabo"],["estudio","Estudio de mercado"],["brand","Branding / identidad visual"],["otro","Otro servicio"]];
+const fmt=n=>"Bs "+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".");
+const lab=v=>(SERV.find(s=>s[0]===v)||[])[1]||v;
+function reco(a,C){
+ C=C||CONFIG;
+ const sv=a.serv||[],net=a.nets||[],obj=a.obj||[],P=C.PLANS,U=C.UP,why=[];
+ const content=sv.some(x=>["contenido","estrategia","grab"].includes(x));
+ const custom=[];
+ if(sv.includes("brand"))custom.push("Branding / identidad visual");
+ if(sv.includes("estudio"))custom.push("Estudio de mercado");
+ if(sv.includes("otro"))custom.push("Otro servicio solicitado");
+ if(net.includes("Otra red"))custom.push("Presencia en otras redes (los planes cubren Facebook, Instagram y TikTok)");
+ let plan=null,ideal=null,note="";
+ const bud=C.BUDGET.find(b=>b.v===a.presup);
+ if(content){
+  let pts=0;const n3=net.filter(x=>["Facebook","Instagram","TikTok"].includes(x)).length;
+  if(n3>=3){pts+=U.red3;why.push("Quieres tener presencia en Facebook, Instagram y TikTok a la vez.");}
+  else if(n3==2){pts+=U.red2;why.push("Quieres trabajar dos redes en paralelo.");}
+  if(sv.includes("estrategia")){pts+=U.estrategia;why.push("Pides estrategia y calendario de contenido.");}
+  if(sv.includes("ads")){pts+=U.ads;why.push("Te interesa la publicidad pagada: el Plan Dominio incluye configuración básica de Ads.");}
+  if(["Todos los días","Varias veces por semana"].includes(a.frec)){pts+=U.freq;why.push("Ya publicas con alta frecuencia y necesitas sostener el ritmo.");}
+  if(obj.length>=3){pts+=U.obj3;why.push("Tienes varios objetivos que atender al mismo tiempo.");}
+  if(["Estrategia","Resultados comerciales"].includes(a.prior)){pts+=U.prior;why.push("Tu prioridad es la estrategia y los resultados comerciales.");}
+  let i=pts>=C.CUT.dominio?2:pts>=C.CUT.crecimiento?1:0;
+  if(!why.length)why.push("Es el punto de partida ideal para ordenar tu contenido y dar tus primeros pasos digitales.");
+  ideal=P[i];
+  if(bud&&bud.v!=="unk"){const aff=bud.v==="r0"?0:bud.v==="r1"?0:bud.v==="r2"?1:2;
+   if(i>aff){i=aff;note="Por tu presupuesto te mostramos el "+P[i].n+"; el "+ideal.n+" encajaría mejor con tus objetivos y podrías ampliarlo más adelante.";}
+   if(bud.v==="r0")note="Tu presupuesto está por debajo de nuestro plan de entrada ("+fmt(P[0].p)+"); lo revisamos en la reunión.";}
+  plan=P[i];
+ }
+ const items=[];
+ const add=(id,opt,why2)=>items.push({id,opt:!!opt,...C.ADDONS[id],why:why2});
+ if(sv.includes("coment"))add("coment",0,"Pediste responder y gestionar comentarios.");
+ if(sv.includes("ads")){ if(plan&&plan.id==="dominio")add("ads",1,"Opcional: el plan incluye solo la configuración básica; la gestión continua se cotiza aparte."); else {add("ads",0,"Configuración, monitoreo y optimización de tus anuncios.");add("camp",1,"Alternativa puntual si prefieres una sola campaña.");}}
+ if(sv.includes("fotos"))add("fotos",0,"Las sesiones de fotos se cotizan por separado.");
+ if(sv.includes("diseno"))add("diseno",0,"Precio por pieza gráfica.");
+ if(sv.includes("edvideo"))add("edvideo",0,"Precio por video que tú grabas.");
+ const mensual=(plan?plan.p:0)+items.filter(x=>x.m&&!x.opt).reduce((s,x)=>s+x.p,0);
+ const unico=items.filter(x=>!x.m&&!x.opt).reduce((s,x)=>s+x.p,0);
+ return {plan,ideal,note,why,items,custom,mensual,unico,score:score(a,plan,ideal,content,bud,C)};
+}
+function score(a,plan,ideal,content,bud,C){
+ C=C||CONFIG;
+ const sv=a.serv||[],d={};
+ d.necesidad=Math.min(25,(sv.length?10:0)+(content?5:0)+((a.prob||[]).length?5:0)+(a.publica!=="Sí, regularmente"?5:0));
+ const o=(a.obj||[]).length;d.objetivos=o===0?0:o<=3?20:12;
+ d.presupuesto=!bud||bud.v==="unk"?12:bud.v==="r0"?0:!plan?15:(ideal&&ideal.p>plan.p)?18:25;
+ d.plazo=C.PLAZO[a.inicio]||0;d.disposicion=C.LISTO[a.listo]||0;
+ const t=Object.values(d).reduce((x,y)=>x+y,0);
+ return {t,d,prio:t>=C.PRIO.alta?"Alta":t>=C.PRIO.media?"Media":"Baja"};
+}
+//ENGINE-END
+
+const store=(()=>{try{localStorage.setItem("__m","1");localStorage.removeItem("__m");return {get:k=>localStorage.getItem(k),set:(k,v)=>localStorage.setItem(k,v),del:k=>localStorage.removeItem(k)};}catch(e){const m={};return {get:k=>(k in m?m[k]:null),set:(k,v)=>{m[k]=String(v)},del:k=>{delete m[k]}};}})();
+const session=(()=>{try{sessionStorage.setItem("__m","1");sessionStorage.removeItem("__m");return {get:k=>sessionStorage.getItem(k),set:(k,v)=>sessionStorage.setItem(k,v),del:k=>sessionStorage.removeItem(k)};}catch(e){const m={};return {get:k=>(k in m?m[k]:null),set:(k,v)=>{m[k]=String(v)},del:k=>{delete m[k]}};}})();
+
+function deepMerge(base,over){for(const k in over){if(over[k]&&typeof over[k]==="object"&&!Array.isArray(over[k])&&base[k]&&typeof base[k]==="object"&&!Array.isArray(base[k]))deepMerge(base[k],over[k]);else base[k]=over[k];}return base;}
+function loadConfig(){let C=JSON.parse(JSON.stringify(CONFIG));try{const o=JSON.parse(store.get("marchos.config")||"null");if(o)deepMerge(C,o);}catch(e){}return C;}
+let CFG=loadConfig();
+
+const LEADS_KEY="marchos.leads.v1";
+const ESTADOS=["Nuevo","Contactado","Reunión agendada","Propuesta enviada","Ganado","Perdido"];
+function listLeads(){try{return JSON.parse(store.get(LEADS_KEY)||"[]");}catch(e){return[];}}
+function saveLead(rec){const l=listLeads();l.push(rec);store.set(LEADS_KEY,JSON.stringify(l));}
+function setLeadEstado(id,estado){const l=listLeads();const x=l.find(z=>z.id===id);if(x){x.estado=estado;store.set(LEADS_KEY,JSON.stringify(l));}}
+function delLead(id){store.set(LEADS_KEY,JSON.stringify(listLeads().filter(z=>z.id!==id)));}
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const logo=c=>`<div class="logo ${c||""}"><span>M</span><b>AR</b><i>CHOS</i><u><s>M</s></u></div>`;
+const nf=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".");
+const fdate=iso=>{try{const d=new Date(iso);return d.toLocaleDateString("es-BO",{day:"2-digit",month:"short",year:"numeric"})+" "+d.toLocaleTimeString("es-BO",{hour:"2-digit",minute:"2-digit"});}catch(e){return iso;}};
+function download(name,txt){const b=new Blob([txt],{type:"text/plain;charset=utf-8"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);}
+function toCSV(rows){return rows.map(r=>r.map(v=>'"'+String(v==null?"":v).replace(/"/g,'""')+'"').join(",")).join("\r\n");}
+function copyTxt(t){const d=()=>{const b=$("[data-act=copy]");if(b)b.textContent="¡Copiado!";};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(d).catch(()=>fallbackCopy(t,d));else fallbackCopy(t,d);}
+function fallbackCopy(t,d){const x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();try{document.execCommand("copy");d&&d();}catch(e){}x.remove();}
+function isAdmin(){return /admin/.test(location.search+location.hash);}
+function authed(){return session.get("marchos.auth")==="1";}
+
+const STEPS=[
+ {t:"Tu negocio",s:"Cuéntanos quién eres y qué haces.",f:[
+  {k:"negocio",l:"Nombre del emprendimiento",t:"text",req:1},{k:"resp",l:"Tu nombre",t:"text",req:1},
+  {k:"wa",l:"Número de WhatsApp",t:"tel",req:1,ph:"Ej. 7XXXXXXX"},{k:"email",l:"Correo electrónico (opcional)",t:"email"},
+  {k:"rubro",l:"Rubro",t:"one",req:1,o:["Odontología","Restaurantes","Inmobiliaria","Belleza","Moda","Tienda","Servicios profesionales","Otro"]},
+  {k:"ciudad",l:"Ciudad y zona",t:"text",req:1,ph:"Santa Cruz · Equipetrol"},
+  {k:"redesTxt",l:"Enlaces o @usuario de tus redes",t:"area"},
+  {k:"antig",l:"Antigüedad del emprendimiento",t:"one",o:["Aún no lanzo","Menos de 1 año","1 a 3 años","Más de 3 años"]}]},
+ {t:"Situación actual",s:"Así entendemos desde dónde partimos.",f:[
+  {k:"publica",l:"¿Publicas contenido en redes?",t:"one",req:1,o:["Sí, regularmente","A veces","Todavía no"]},
+  {k:"frec",l:"¿Con qué frecuencia?",t:"one",o:["Todos los días","Varias veces por semana","Una vez por semana o menos","No publico"]},
+  {k:"gest",l:"¿Quién gestiona tus redes?",t:"one",o:["Yo mismo/a","Una persona de mi equipo","Otra agencia","Nadie"]},
+  {k:"prob",l:"¿Qué quieres resolver? (varias opciones)",t:"multi",req:1,o:["Pocas ventas o consultas","No sé qué publicar","No tengo tiempo","Contenido poco profesional","Poco alcance","Quiero lanzar algo nuevo"]},
+  {k:"result",l:"¿Qué resultados has logrado hasta ahora?",t:"area"}]},
+ {t:"Tus objetivos",s:"Elige lo que más quieres lograr.",f:[
+  {k:"obj",l:"Objetivos (varias opciones)",t:"multi",req:1,o:["Conseguir más clientes","Aumentar las ventas","Generar reservas o consultas por WhatsApp","Mejorar la imagen de marca","Crear contenido profesional","Crecer en redes","Lanzar un negocio o producto","Promocionar una oferta"]}]},
+ {t:"Servicios que necesitas",s:"Marca todo lo que te interesa.",f:[
+  {k:"nets",l:"Redes donde quieres presencia",t:"multi",req:1,o:["Facebook","Instagram","TikTok","Otra red"]},
+  {k:"serv",l:"Servicios (varias opciones)",t:"multi",req:1,o:SERV.map(s=>({v:s[0],l:s[1]}))}]},
+ {t:"Presupuesto y contratación",s:"Para recomendarte lo que realmente encaja.",f:[
+  {k:"presup",l:"Presupuesto mensual previsto",t:"one",req:1,o:CFG.BUDGET.map(b=>({v:b.v,l:b.l}))},
+  {k:"prior",l:"Tu prioridad principal",t:"one",o:["Precio","Calidad del contenido","Estrategia","Resultados comerciales"]},
+  {k:"inicio",l:"¿Cuándo quieres comenzar?",t:"one",req:1,o:Object.keys(CFG.PLAZO)},
+  {k:"tipo",l:"¿Servicio mensual o puntual?",t:"one",o:["Mensual","Puntual"]},
+  {k:"listo",l:"¿Listo para contratar si la propuesta es adecuada?",t:"one",req:1,o:Object.keys(CFG.LISTO)},
+  {k:"ok",l:"Acepto el aviso de privacidad: Marchos usará estos datos solo para contactarme sobre esta propuesta comercial.",t:"check",req:1}]}];
+
+const S={i:-1,a:{},err:{},r:null,saved:"",tab:"leads",msg:""};
+
+function text(a,r){
+ const L=["PROPUESTA PRELIMINAR – MARCHOS","Negocio: "+a.negocio,"Responsable: "+a.resp+" · WhatsApp: "+a.wa,"Rubro: "+(a.rubro||"-")+" · "+(a.ciudad||"-")];
+ if(a.redesTxt)L.push("Redes actuales: "+a.redesTxt);
+ L.push("Objetivos: "+(a.obj||[]).join(", "),"Servicios de interés: "+(a.serv||[]).map(lab).join(", "),"Redes objetivo: "+(a.nets||[]).join(", "),
+ "Presupuesto: "+((CFG.BUDGET.find(b=>b.v===a.presup)||{}).l||"-"),"Inicio: "+(a.inicio||"-"));
+ L.push(r.plan?"Plan recomendado: "+r.plan.n+" – "+fmt(r.plan.p)+"/mes":"Plan recomendado: requiere evaluación comercial");
+ r.items.forEach(x=>L.push((x.opt?"(Opcional) ":"+ ")+x.n+": "+fmt(x.p)+(x.m?"/mes":"")));
+ if(r.plan)L.push("Total mensual estimado: "+fmt(r.mensual)+(r.unico?" + "+fmt(r.unico)+" pago único":""));
+ if(r.custom.length)L.push("A evaluar: "+r.custom.join("; "));
+ L.push("Propuesta preliminar; alcance definitivo tras reunión con Marchos.");
+ return L.join("\n");
+}
+
+function field(f){const v=S.a[f.k],e=S.err[f.k];let h=`<div class="fld">`;
+ if(f.t==="check")h+=`<label class="chk"><input type="checkbox" data-k="${f.k}" ${v?"checked":""}><span>${f.l} *</span></label>`;
+ else{h+=`<label>${f.l}${f.req?" *":""}</label>`;
+  if(["text","tel","email"].includes(f.t))h+=`<input type="${f.t}" data-k="${f.k}" value="${esc(v)}" placeholder="${f.ph||""}">`;
+  else if(f.t==="area")h+=`<textarea data-k="${f.k}">${esc(v)}</textarea>`;
+  else h+=`<div class="chips">`+f.o.map(o=>{o=typeof o==="string"?{v:o,l:o}:o;const on=f.t==="multi"?(v||[]).includes(o.v):v===o.v;return `<button type="button" class="chip${on?" on":""}" data-k="${f.k}" data-v="${esc(o.v)}" data-m="${f.t==="multi"?1:0}">${esc(o.l)}</button>`}).join("")+`</div>`}
+ return h+(e?`<div class="err">${e}</div>`:"")+"</div>"}
+
+function render(){
+ if(isAdmin())return renderAdmin();
+ const A=$("#app");window.scrollTo(0,0);
+ if(S.i<0){A.innerHTML=`${logo()}<p class="mut" style="letter-spacing:.35em;font-size:10px;margin:4px 0 40px">MARKETING · ESTRATEGIA · CONTENIDO</p><div class="eyebrow">Cotizador inteligente</div><h1>Descubre el plan ideal para tu marca</h1><p class="tag">Convertimos ideas en contenido<br><b>que <em>conecta</em> y <em>vende</em></b></p><p class="sub">Responde un diagnóstico de 3 minutos y recibí al instante una propuesta preliminar con el plan recomendado y los precios oficiales de Marchos.</p><div class="nav"><button class="btn" data-go="1">Comenzar diagnóstico</button></div>
+ <p class="note">Tus respuestas se procesan en tu propio dispositivo. Marchos recibe tus datos únicamente si vos se los enviás por WhatsApp al final del diagnóstico.</p>`;return}
+ if(S.i>=STEPS.length)return result();
+ const st=STEPS[S.i];
+ A.innerHTML=`${logo("sm")}<div class="bar"><i style="width:${(S.i+1)/STEPS.length*100}%"></i></div>
+ <div class="dots">${STEPS.map((_,j)=>`<span class="${j<=S.i?"on":""}"></span>`).join("")}</div>
+ <div class="eyebrow">Paso ${S.i+1} de ${STEPS.length}</div><h2>${st.t}</h2><p class="sub">${st.s}</p><div class="card">${st.f.map(field).join("")}</div>
+ <div class="nav"><button class="btn o" data-go="-1">Atrás</button><button class="btn" data-go="1">${S.i===STEPS.length-1?"Ver mi propuesta":"Continuar"}</button></div>`;
+}
+
+function validate(){const e={};const st=STEPS[S.i];if(!st)return true;
+ st.f.forEach(f=>{const v=S.a[f.k];
+  if(f.req&&(!v||(Array.isArray(v)&&!v.length)||(typeof v==="string"&&!v.trim())||v===false))e[f.k]=f.t==="check"?"Necesitamos tu consentimiento para continuar.":"Este campo es obligatorio.";
+  else if(f.k==="wa"&&String(v).replace(/\D/g,"").length<8)e.wa="Ingresa un número válido (mínimo 8 dígitos).";
+  else if(f.k==="email"&&v&&!/^\S+@\S+\.\S+$/.test(v))e.email="Revisa el formato del correo.";});
+ S.err=e;
+ if(Object.keys(e).length){const first=document.querySelector(".err");if(first)first.scrollIntoView({behavior:"smooth",block:"center"});}
+ return !Object.keys(e).length;
+}
+
+function result(){
+ const a=S.a,key=JSON.stringify(a);
+ if(S.saved!==key){
+  S.r=reco(a,CFG);
+  saveLead({id:Date.now(),fecha:new Date().toISOString(),estado:"Nuevo",...a,
+   plan:S.r.plan?S.r.plan.n:"Evaluación comercial",ideal:S.r.ideal?S.r.ideal.n:"-",
+   mensual:S.r.mensual,unico:S.r.unico,puntaje:S.r.score.t,prioridad:S.r.score.prio,resumen:text(a,S.r)});
+  S.saved=key;
+ }
+ const r=S.r,A=$("#app"),p=r.plan;
+ const sit=[a.publica&&("Publicas: "+a.publica.toLowerCase()),a.frec&&("frecuencia: "+a.frec.toLowerCase()),a.gest&&("gestión actual: "+a.gest.toLowerCase())].filter(Boolean).join(" · ");
+ const wa="https://wa.me/"+CFG.WHATSAPP+"?text="+encodeURIComponent("Hola Marchos, quiero una reunión para revisar mi propuesta.\n\n"+text(a,r));
+ A.innerHTML=`<div id="proposal">${logo("sm")}<div class="eyebrow" style="margin-top:24px">Propuesta preliminar</div><h2>Propuesta para ${esc(a.negocio)}</h2>
+ <div class="card"><div class="lbl" style="margin-top:0">Situación actual</div><p class="sub" style="margin:0">${esc(sit||"—")}${(a.prob||[]).length?"<br>Quieres resolver: "+esc(a.prob.join(", ").toLowerCase()):""}${a.result?"<br>Resultados hasta ahora: "+esc(a.result):""}</p>
+ <div class="lbl">Objetivos principales</div><p class="sub" style="margin:0">${esc((a.obj||[]).join(" · "))}</p><div class="lbl">Necesidades detectadas</div><p class="sub" style="margin:0">${esc((a.serv||[]).map(lab).join(" · "))}</p></div>
+ ${p?`<div class="card"><div class="eyebrow">${p.tag} · Recomendado</div><h2>${p.n}</h2><p class="sub">${p.d}</p><div class="price"><small>Bs</small>${nf(p.p)}<small style="font-size:12px;letter-spacing:.2em"> / MES</small></div>
+ ${r.note?`<p class="err" style="color:var(--gold)">${esc(r.note)}</p>`:""}
+ <div class="lbl">Incluye</div><ul class="st">${p.inc.map(x=>`<li>${x}</li>`).join("")}</ul><div class="lbl">Contenido por red</div>${Object.entries(p.net).map(([k,v])=>`<div class="pill"><span>${k}</span><span>${v}</span></div>`).join("")}
+ <div class="lbl">Por qué lo recomendamos</div><ul class="st">${r.why.map(x=>`<li>${x}</li>`).join("")}</ul></div>`
+ :`<div class="card"><h2>Recomendación personalizada</h2><p class="sub">${r.items.length?"Lo que buscas no requiere un plan mensual: te mostramos los servicios individuales del catálogo. ":"Los servicios que buscas no corresponden a un plan de nuestro catálogo, por lo que requieren una evaluación comercial con el equipo."}</p></div>`}
+ ${r.items.length||r.custom.length?`<div class="card"><div class="lbl" style="margin-top:0">Servicios adicionales (se cotizan por separado)</div>${r.items.map(x=>`<div class="row"><span>${x.n}${x.opt?" <em class='mut'>(opcional)</em>":""}<br><small class="mut">${x.d}. ${x.why}</small></span><b>${fmt(x.p)}${x.m?" / mes":""}</b></div>`).join("")}
+ ${r.custom.length?`<div class="row"><span>A evaluar en reunión:<br><small class="mut">${esc(r.custom.join(" · "))}</small></span><b>Cotización</b></div>`:""}</div>`:""}
+ ${p||r.items.length?`<div class="card">${r.mensual?`<div class="row" style="border:0"><span>Total mensual estimado</span><b style="font-size:20px">${fmt(r.mensual)}</b></div>`:""}${r.unico?`<div class="row" style="border:0"><span>Pagos únicos adicionales</span><b>${fmt(r.unico)}</b></div>`:""}<p class="mut" style="font-size:12px;margin:0">El presupuesto de publicidad pagada se paga aparte y lo asume directamente el cliente.</p></div>`:""}
+ <div class="card"><div class="lbl" style="margin-top:0">Próximo paso recomendado</div><p class="sub" style="margin:0">Agenda una reunión breve con Marchos para confirmar alcance, calendario de grabación y fecha de inicio.</p></div>
+ <p class="note">Propuesta preliminar. El alcance definitivo se confirma después de una reunión con Marchos.</p></div>
+ <div class="nav noprint"><a class="btn" target="_blank" rel="noopener" href="${wa}">Solicitar reunión por WhatsApp</a><button class="btn o" data-act="download">Descargar propuesta</button><button class="btn o" data-act="copy">Copiar propuesta</button><button class="btn o" data-act="print">Imprimir</button></div>
+ <p class="note noprint">Tus respuestas quedaron guardadas en este dispositivo para tu registro. Para que Marchos las reciba, envialas por WhatsApp con el botón de arriba.</p>`;
+}
+
+document.addEventListener("click",ev=>{
+ const c=ev.target.closest(".chip"),g=ev.target.closest("[data-go]"),tab=ev.target.closest("[data-tab]"),adm=ev.target.closest("[data-a]"),b=ev.target.closest("[data-act]");
+ if(c){const k=c.dataset.k,v=c.dataset.v;
+  if(c.dataset.m==="1"){const l=S.a[k]=S.a[k]||[];const j=l.indexOf(v);j<0?l.push(v):l.splice(j,1);c.classList.toggle("on")}
+  else{S.a[k]=v;c.parentNode.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));c.classList.add("on")}
+  return}
+ if(tab){S.tab=tab.dataset.tab;S.msg="";renderAdmin();return}
+ if(adm){adminAction(adm.dataset.a,adm.dataset.id);return}
+ if(g){const d=+g.dataset.go;
+  if(d>0&&S.i>=0&&S.i<STEPS.length&&!validate()){render();return}
+  S.err={};S.i+=d;render();return}
+ if(b==="copy")copyTxt(text(S.a,S.r));
+ if(b==="download")download("Propuesta-Marchos-"+(S.a.negocio||"propuesta").replace(/[^A-Za-z0-9áéíóúÁÉÍÓÚ ]/g,"").trim().replace(/ /g,"-")+".txt",text(S.a,S.r));
+ if(b==="print")window.print();
+});
+document.addEventListener("input",ev=>{const k=ev.target.dataset.k;if(!k)return;S.a[k]=ev.target.type==="checkbox"?ev.target.checked:ev.target.value;});
+document.addEventListener("change",ev=>{const t=ev.target;if(t.matches&&t.matches("[data-est]")){setLeadEstado(Number(t.dataset.est),t.value);S.msg="Estado actualizado a "+t.value+".";}});
+
+function leadsCSV(){
+ const rows=[["Fecha","Estado","Negocio","Responsable","WhatsApp","Email","Rubro","Ciudad","Redes actuales","Antigüedad","¿Publica?","Frecuencia","Gestión","Problemas","Resultados","Objetivos","Redes objetivo","Servicios","Presupuesto","Prioridad","Inicio","Tipo","Listo para contratar","Plan","Plan ideal","Mensual Bs","Único Bs","Puntaje","Prioridad score"]];
+ listLeads().forEach(l=>rows.push([l.fecha,l.estado,l.negocio,l.resp,l.wa,l.email,l.rubro,l.ciudad,l.redesTxt,l.antig,l.publica,l.frec,l.gest,(l.prob||[]).join(" | "),l.result,(l.obj||[]).join(" | "),(l.nets||[]).join(" | "),(l.serv||[]).map(lab).join(" | "),(CFG.BUDGET.find(b=>b.v===l.presup)||{}).l||l.presup,l.prior,l.inicio,l.tipo,l.listo,l.plan,l.ideal,l.mensual,l.unico,l.puntaje,l.prioridad]));
+ return toCSV(rows);
+}
+function leadsHTML(leads){
+ if(!leads.length)return `<div class="card"><h2>Sin prospectos todavía</h2><p class="sub">Cuando completes el cotizador en este navegador, cada propuesta generada quedará registrada acá con su puntaje y prioridad comercial.</p></div>`;
+ const l=[...leads].reverse();
+ return `<div class="nav noprint" style="margin:0 0 18px"><button class="btn sm" data-a="csv">Exportar CSV</button><button class="btn o sm" data-a="clear">Borrar todo</button></div>`+l.map(x=>`
+ <div class="lead">
+  <h3>${esc(x.negocio||"—")} <span class="badge b-${x.prioridad==="Alta"?"alta":x.prioridad==="Media"?"media":"baja"}">${esc(x.prioridad)}</span></h3>
+  <div class="meta">${fdate(x.fecha)} · ${esc(x.rubro||"")}${x.ciudad?" · "+esc(x.ciudad):""} · Puntaje ${x.puntaje}/100 · ${esc(x.plan)}</div>
+  <div class="row" style="border:0"><span>${esc(x.resp||"—")} · <a href="https://wa.me/591${String(x.wa||"").replace(/\D/g,"")}" target="_blank" rel="noopener" style="color:var(--gold)">${esc(x.wa||"—")}</a></span><b>${fmt(x.mensual||0)}${x.unico?" + "+fmt(x.unico):""}</b></div>
+  <div class="nav noprint" style="margin-top:10px;align-items:center">
+   <select data-est="${x.id}" aria-label="Estado comercial">${ESTADOS.map(e=>`<option ${e===x.estado?"selected":""}>${e}</option>`).join("")}</select>
+   <button class="btn o sm" data-a="wa" data-id="${x.id}">Escribir por WhatsApp</button>
+   <button class="btn dark sm" data-a="del" data-id="${x.id}">Eliminar</button>
+  </div>
+  <details><summary>Ver respuestas completas</summary><pre style="white-space:pre-wrap;font:inherit;font-size:12px;color:var(--mut);margin:8px 0 0">${esc(x.resumen||"")}</pre></details>
+ </div>`).join("");
+}
+function cfgHTML(){
+ const P=CFG.PLANS.map((p,i)=>`<div class="grid2" style="align-items:end">
+  <div class="fld" style="margin:0"><label>${esc(p.n)}</label><input type="text" value="${esc(p.n)}" disabled></div>
+  <div class="fld" style="margin:0"><label>Precio mensual (Bs)</label><input type="number" min="0" step="50" value="${p.p}" data-plan="${i}"></div>
+ </div>`).join("");
+ const Ad=Object.keys(CFG.ADDONS).map(k=>{const a=CFG.ADDONS[k];return `<div class="grid2" style="align-items:end">
+  <div class="fld" style="margin:0"><label>${esc(a.n)}</label><input type="text" value="${esc(a.n)}" disabled></div>
+  <div class="fld" style="margin:0"><label>Precio (Bs)</label><input type="number" min="0" step="10" value="${a.p}" data-addon="${k}">
+  <label class="chk" style="margin-top:6px"><input type="checkbox" data-addonm="${k}" ${a.m?"checked":""}><span>Se cobra por mes</span></label></div>
+ </div>`;}).join("");
+ return `<div class="card"><div class="lbl" style="margin-top:0">Planes (precio mensual en Bs)</div>${P}
+ <p class="mut" style="font-size:12px">Para cambiar nombres o entregables de los planes, editá la sección CONFIG del archivo index.html.</p></div>
+ <div class="card"><div class="lbl" style="margin-top:0">Servicios adicionales</div>${Ad}</div>
+ <div class="card"><div class="lbl" style="margin-top:0">Scoring interno (0-100)</div>
+ <div class="grid2">
+  <div class="fld" style="margin:0"><label>Umbral prioridad alta</label><input type="number" min="0" max="100" value="${CFG.PRIO.alta}" data-cfg="alta"></div>
+  <div class="fld" style="margin:0"><label>Umbral prioridad media</label><input type="number" min="0" max="100" value="${CFG.PRIO.media}" data-cfg="media"></div>
+ </div></div>
+ <div class="card"><div class="lbl" style="margin-top:0">Acceso</div>
+ <div class="fld" style="margin:0"><label>Clave del panel</label><input type="text" value="${esc(CFG.AUTH_KEY)}" data-cfg="auth"></div></div>
+ <div class="nav"><button class="btn" data-a="save">Guardar configuración</button><button class="btn o" data-a="reset">Restaurar de fábrica</button></div>
+ <p class="note">Los cambios se guardan solo en este dispositivo. El cliente final nunca ve esta pantalla: se accede agregando <b>?admin</b> a la URL.</p>`;
+}
+function renderAdmin(){
+ const A=$("#app");window.scrollTo(0,0);
+ if(!authed()){
+  A.innerHTML=`${logo("sm")}<div class="eyebrow" style="margin-top:24px">Panel MARCHOS</div><h2>Acceso interno</h2><p class="sub">Ingresá la clave para ver prospectos y editar precios. Esta pantalla no es visible para los clientes.</p>
+  <div class="card"><div class="fld"><label>Clave de acceso</label><input type="password" data-l="pass" placeholder="••••••••"></div>${S.msg?`<div class="err">${esc(S.msg)}</div>`:""}<div class="nav"><button class="btn" data-a="login">Ingresar</button><a class="btn o" href="?">Volver al cotizador</a></div></div>
+  <p class="note">Clave inicial: <b>${esc(CFG.AUTH_KEY)}</b>. Cambiala desde la pestaña de configuración una vez dentro.</p>`;
+  return;
+ }
+ const leads=listLeads();
+ A.innerHTML=`${logo("sm")}<div class="eyebrow" style="margin-top:24px">Panel interno · Marchos</div>
+ <h2>Gestión comercial</h2>
+ <p class="sub">Los prospectos se guardan en este dispositivo (respaldo local). El canal principal de captación es WhatsApp: cada cliente envía su propuesta completa al tocar el botón en su resultado.</p>
+ ${S.msg?`<div class="flash">${esc(S.msg)}</div>`:""}
+ <div class="tabs"><button class="btn ${S.tab==="leads"?"":"o"}" data-tab="leads">Prospectos (${leads.length})</button><button class="btn ${S.tab==="cfg"?"":"o"}" data-tab="cfg">Precios y configuración</button></div>
+ ${S.tab==="leads"?leadsHTML(leads):cfgHTML()}
+ <div class="nav noprint"><button class="btn o sm" data-a="logout">Salir del panel</button><a class="btn o sm" href="?">Volver al cotizador</a></div>`;
+}
+function saveCfgFromForm(){
+ const O={PLANS:[],ADDONS:{},AUTH_KEY:CFG.AUTH_KEY,PRIO:{}};
+ document.querySelectorAll("[data-plan]").forEach(i=>O.PLANS.push({id:CFG.PLANS[+i.dataset.plan].id,p:Math.max(0,Number(i.value)||0)}));
+ document.querySelectorAll("[data-addon]").forEach(i=>{const cb=document.querySelector('[data-addonm="'+i.dataset.addon+'"]');O.ADDONS[i.dataset.addon]={p:Math.max(0,Number(i.value)||0),m:!!(cb&&cb.checked)};});
+ const k=$("[data-cfg=auth]");if(k&&k.value.trim())O.AUTH_KEY=k.value.trim();
+ O.PRIO.alta=Math.min(100,Math.max(0,Number(($("[data-cfg=alta]")||{value:CFG.PRIO.alta}).value)));
+ O.PRIO.media=Math.min(100,Math.max(0,Number(($("[data-cfg=media]")||{value:CFG.PRIO.media}).value)));
+ store.set("marchos.config",JSON.stringify(O));
+ CFG=loadConfig();S.msg="Configuración guardada en este dispositivo.";
+ renderAdmin();
+}
+function adminAction(act,id){
+ if(act==="login"){const v=($("[data-l=pass]")||{}).value||"";
+  if(v===CFG.AUTH_KEY){session.set("marchos.auth","1");S.msg="";renderAdmin();}
+  else{S.msg="Clave incorrecta. Probá de nuevo.";renderAdmin();}}
+ if(act==="logout"){session.del("marchos.auth");S.msg="";renderAdmin();}
+ if(act==="csv"){download("marchos-prospectos-"+new Date().toISOString().slice(0,10)+".csv",leadsCSV());}
+ if(act==="clear"){if(confirm("¿Borrar todos los prospectos guardados en este dispositivo? Esta acción no se puede deshacer.")){store.del(LEADS_KEY);S.msg="Prospectos borrados.";renderAdmin();}}
+ if(act==="del"){delLead(Number(id));S.msg="Prospecto eliminado.";renderAdmin();}
+ if(act==="wa"){const x=listLeads().find(z=>z.id===Number(id));
+  if(x){const msg="Hola "+(x.resp||"")+", te escribe Marchos por la propuesta de "+(x.negocio||"tu marca")+". ¿Coordinamos una reunión breve?";
+   window.open("https://wa.me/591"+String(x.wa||"").replace(/\D/g,"")+"?text="+encodeURIComponent(msg),"_blank","noopener");}}
+ if(act==="save"){saveCfgFromForm();}
+ if(act==="reset"){if(confirm("¿Restaurar precios y configuración de fábrica?")){store.del("marchos.config");CFG=loadConfig();S.msg="Configuración restaurada.";renderAdmin();}}
+}
+render();
+</script>
+</body>
+</html>
